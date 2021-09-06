@@ -1,8 +1,8 @@
-# 御坂驱动-AT24Cxx
+# 御坂网络驱动-AT24CXX
 
 ## 介绍
 
-御坂驱动-AT24Cxx 软件包提供了 at24cxx 系列 EEPROM 全部功能。 目前已在 at24c02,at24c04, at24c512 验证通过。
+御坂网络驱动-AT24CXX 软件包提供了 at24cxx 系列 EEPROM 全部功能。 目前已在 at24c02,at24c04, at24c512 验证通过。
 
 ### 目录结构
 
@@ -18,7 +18,7 @@
 
 ### 许可证
 
- 御坂驱动-AT24Cxx 软件包遵循 Apache-2.0 许可，详见 LICENSE 文件。
+ 御坂网络驱动-AT24Cxx 软件包遵循 Apache-2.0 许可，详见 LICENSE 文件。
 
 ### 依赖
 
@@ -213,7 +213,7 @@ void misaka_at24cxx_i2c_error_callback()
 
 [AT24CXX 系列读写算法 | xqyjlj](https://xqyjlj.github.io/2021/05/15/AT24CXX系列读写算法/)
 
-[御坂驱动-AT24CXX | xqyjlj](https://xqyjlj.github.io/2021/05/15/御坂驱动-AT24CXX/)
+[御坂网络驱动-AT24CXX | xqyjlj](https://xqyjlj.github.io/2021/05/15/御坂网络驱动-AT24CXX/)
 
 ## 参考
 
