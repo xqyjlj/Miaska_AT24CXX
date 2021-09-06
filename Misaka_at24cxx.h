@@ -13,7 +13,7 @@
 
 #include "stdint.h"
 
-#define AT24CXX_ASSERT (void *)
+#define AT24CXX_ASSERT(expr) ((void)0U)
 
 typedef enum
 {
