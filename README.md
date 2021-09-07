@@ -178,13 +178,13 @@ _释放互斥量，如果为裸机系统，空函数即可_
 ### misaka_at24cxx_port_init
 
 ```c
-misaka_at24cxx_t misaka_at24cxx_port_init()
+Misaka_at24cxx_t misaka_at24cxx_port_init()
 ```
 
 _此函数需自己调用_
 
 ```c
-misaka_at24cxx_t misaka_at24cxx_port_init()
+Misaka_at24cxx_t misaka_at24cxx_port_init()
 {
     misaka_at24cxx_obj.type = MISAKA_AT24C04;
     misaka_at24cxx_obj.isFRAM = 0;
@@ -195,13 +195,13 @@ misaka_at24cxx_t misaka_at24cxx_port_init()
     misaka_at24cxx_obj.i2c_send_then_send = i2c_send_then_send;
     misaka_at24cxx_obj.address = 0x50;
 
-    misaka_at24cxx_init(&misaka_at24cxx_obj);
+    Misaka_at24cxx_init(&misaka_at24cxx_obj);
 
     return &misaka_at24cxx_obj;
 }
 ```
 
-### misaka_at24cxx_i2c_error_callback
+### Misaka_at24cxx_i2c_error_callback
 
 ```c
 void Misaka_at24cxx_i2c_error_callback()
