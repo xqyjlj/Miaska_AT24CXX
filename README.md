@@ -1,5 +1,7 @@
 # 御坂网络驱动-AT24CXX
 
+更多资料见：[御坂网络驱动-AT24CXX | xqyjlj](https://xqyjlj.github.io/2021/05/15/御坂网络驱动-AT24CXX/)
+
 ## 介绍
 
 御坂网络驱动-AT24CXX 软件包提供了 at24cxx 系列 EEPROM 全部功能。 目前已在 at24c02,at24c04, at24c512 验证通过。
