@@ -8,10 +8,10 @@
 
 | 名称                  | 说明              |
 | --------------------- | ----------------- |
-| demo                  | 例程              |
-| misaka_at24cxx.h      | EEPROM 使用头文件 |
-| misaka_at24cxx.c      | EEPROM 使用源代码 |
-| misaka_at24cxx_port.c | EEPROM 移植文件   |
+| Examples              | 例程              |
+| Misaka_at24cxx.h      | EEPROM 使用头文件 |
+| Misaka_at24cxx.c      | EEPROM 使用源代码 |
+| Misaka_at24cxx_port.c | EEPROM 移植文件   |
 | README.md             | 驱动使用说明      |
 | at24cxx_datasheet.pdf | 官方数据手册      |
 | AT24C512C.pdf         | 官方数据手册      |
@@ -29,7 +29,7 @@
 ### 初始化
 
 ```c
-void misaka_at24cxx_init(misaka_at24cxx_t ops);
+void Misaka_at24cxx_init(misaka_at24cxx_t ops);
 ```
 
 _eeprom 初始化函数_
@@ -41,7 +41,7 @@ _eeprom 初始化函数_
 ### 写
 
 ```c
-uint8_t misaka_at24cxx_write(misaka_at24cxx_t ops, uint32_t addr, uint8_t* txbuf, uint32_t len);
+uint8_t Misaka_at24cxx_write(misaka_at24cxx_t ops, uint32_t addr, uint8_t* txbuf, uint32_t len);
 ```
 
 _eeprom 写入函数（包含页写算法）_
@@ -59,7 +59,7 @@ _eeprom 写入函数（包含页写算法）_
 ### 读
 
 ```c
-uint8_t misaka_at24cxx_read(misaka_at24cxx_t ops, uint32_t addr, uint8_t* rxbuf, uint32_t len);
+uint8_t Misaka_at24cxx_read(misaka_at24cxx_t ops, uint32_t addr, uint8_t* rxbuf, uint32_t len);
 ```
 
 _eeprom 读取函数_
@@ -77,7 +77,7 @@ _eeprom 读取函数_
 ### 擦除
 
 ```c
-uint8_t misaka_at24cxx_erase(misaka_at24cxx_t ops, uint32_t addr, uint8_t data, uint32_t len);
+uint8_t Misaka_at24cxx_erase(misaka_at24cxx_t ops, uint32_t addr, uint8_t data, uint32_t len);
 ```
 
 _eeprom 擦除函数，将指定的数据块擦除成指定的数据，其实就是对 misaka_at24cxx_write 函数的一个再次封装_
@@ -95,7 +95,7 @@ _eeprom 擦除函数，将指定的数据块擦除成指定的数据，其实就
 ### 检查
 
 ```c
-uint8_t misaka_at24cxx_check(misaka_at24cxx_t ops);
+uint8_t Misaka_at24cxx_check(misaka_at24cxx_t ops);
 ```
 
 _eeprom 检查函数_
@@ -111,7 +111,7 @@ _eeprom 检查函数_
 
 移植非常简单。
 
-只需要在`misaka_at24cxx_port.c`文件中将所需要实现的接口实现即可。
+只需要在`Misaka_at24cxx_port.c`文件中将所需要实现的接口实现即可。
 
 ### i2c_send_then_recv
 
@@ -204,7 +204,7 @@ misaka_at24cxx_t misaka_at24cxx_port_init()
 ### misaka_at24cxx_i2c_error_callback
 
 ```c
-void misaka_at24cxx_i2c_error_callback()
+void Misaka_at24cxx_i2c_error_callback()
 ```
 
 此函数在i2c发生错误时会调用
