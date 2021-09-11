@@ -4,7 +4,7 @@
 
 ## 介绍
 
-御坂网络驱动-AT24CXX 软件包提供了 at24cxx 系列 EEPROM 全部功能。 目前已在 at24c02,at24c04, at24c512 验证通过。
+御坂网络驱动-AT24CXX 软件包提供了 at24cxx 系列 EEPROM 全部功能（带页写算法）。 目前已在 at24c02,at24c04, at24c512 验证通过。
 
 ### 目录结构
 
@@ -25,89 +25,6 @@
 ### 依赖
 
  依赖 `RT-Thread I2C` 设备驱动框架，或者`misaka御坂框架`。
-
-## API
-
-### 初始化
-
-```c
-void Misaka_at24cxx_init(misaka_at24cxx_t ops);
-```
-
-_eeprom 初始化函数_
-
-| 参数  |     描述      |
-| :---: | :-----------: |
-| _ops_ | _eeprom 对象_ |
-
-### 写
-
-```c
-uint8_t Misaka_at24cxx_write(misaka_at24cxx_t ops, uint32_t addr, uint8_t* txbuf, uint32_t len);
-```
-
-_eeprom 写入函数（包含页写算法）_
-
-|   参数   |       描述       |
-| :------: | :--------------: |
-|  _ops_   |  _eeprom 对象_   |
-|  _addr_  |      _地址_      |
-| _txbuf_  |   _待发送数据_   |
-|  _len_   | _待发送数据长度_ |
-| **返回** |                  |
-|   _0_    |    _写入成功_    |
-|   _1_    |    _写入失败_    |
-
-### 读
-
-```c
-uint8_t Misaka_at24cxx_read(misaka_at24cxx_t ops, uint32_t addr, uint8_t* rxbuf, uint32_t len);
-```
-
-_eeprom 读取函数_
-
-|   参数   |       描述       |
-| :------: | :--------------: |
-|  _ops_   |  _eeprom 对象_   |
-|  _addr_  |      _地址_      |
-| _rxbuf_  |   _待读取数据_   |
-|  _len_   | _待读取数据长度_ |
-| **返回** |                  |
-|   _0_    |    _读取成功_    |
-|   _1_    |    _读取失败_    |
-
-### 擦除
-
-```c
-uint8_t Misaka_at24cxx_erase(misaka_at24cxx_t ops, uint32_t addr, uint8_t data, uint32_t len);
-```
-
-_eeprom 擦除函数，将指定的数据块擦除成指定的数据，其实就是对 misaka_at24cxx_write 函数的一个再次封装_
-
-|   参数   |       描述       |
-| :------: | :--------------: |
-|  _ops_   |  _eeprom 对象_   |
-|  _addr_  |      _地址_      |
-|  _data_  |   _指定的数据_   |
-|  _len_   | _需要擦除的长度_ |
-| **返回** |                  |
-|   _0_    |    _擦除成功_    |
-|   _1_    |    _擦除失败_    |
-
-### 检查
-
-```c
-uint8_t Misaka_at24cxx_check(misaka_at24cxx_t ops);
-```
-
-_eeprom 检查函数_
-
-|   参数   |     描述      |
-| :------: | :-----------: |
-|  _ops_   | _eeprom 对象_ |
-| **返回** |               |
-|   _0_    |  _检查成功_   |
-|   _1_    |  _检查失败_   |
 
 ## 移植说明
 
@@ -209,7 +126,7 @@ Misaka_at24cxx_t misaka_at24cxx_port_init()
 void Misaka_at24cxx_i2c_error_callback()
 ```
 
-此函数在i2c发生错误时会调用
+此函数在i2c发生错误时会调用。
 
 ## 更多信息
 
