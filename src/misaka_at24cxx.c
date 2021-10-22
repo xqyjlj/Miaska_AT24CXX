@@ -5,6 +5,7 @@
  * @version 0.0
  * @date 2021-09-07
  * @copyright Copyright © 2020-2021 xqyjlj<xqyjlj@126.com>
+ * @SPDX-License-Identifier: Apache-2.0
  *
  * *********************************************************************************
  * @par ChangeLog:
@@ -14,7 +15,7 @@
  * </table>
  * *********************************************************************************
  */
-#include "misaka_at24cxx.h"
+#include "misaka_device/misaka_at24cxx.h"
 
 /**
  * @brief 获得eeprom的页大小
