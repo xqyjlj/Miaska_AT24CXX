@@ -5,7 +5,7 @@ cwd = GetCurrentDir()
 
 # init src and inc vars
 src = []
-inc = [cwd/inc]
+inc = [cwd + "/inc"]
 
 # add misaka_at24cxx source code
 src = src + ['src/misaka_at24cxx.c']
