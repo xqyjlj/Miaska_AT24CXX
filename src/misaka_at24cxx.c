@@ -127,13 +127,13 @@ static uint8_t misaka_at24cxx_write_page(misaka_at24cxx_t ops, uint32_t addr, ui
         buf_size = 1;
     }
 
-    ops->mutex_take();
+
     ret = ops->i2c_send_then_send(address, buf, buf_size, txbuf, len);
     if (ret)
     {
         misaka_at24cxx_i2c_error_callback();
     }
-    ops->mutex_release();
+ 
 
     return ret;
 }
@@ -227,6 +227,7 @@ uint8_t misaka_at24cxx_write(misaka_at24cxx_t ops, uint32_t addr, uint8_t* txbuf
     }
     else
     {
+		ops->mutex_take();
         /* EEPROM */
         while (len > 0)
         {
@@ -245,6 +246,7 @@ uint8_t misaka_at24cxx_write(misaka_at24cxx_t ops, uint32_t addr, uint8_t* txbuf
             }
             ops->delay_ms(6);
         }
+		ops->mutex_release();
     }
     return error;
 }
@@ -310,7 +312,7 @@ uint8_t misaka_at24cxx_erase(misaka_at24cxx_t ops, uint32_t addr, uint8_t data, 
     }
     for (i = 0; i < len; i++)
     {
-        error = misaka_at24cxx_write_page(ops, addr, &data, len);
+        error = misaka_at24cxx_write_page(ops, addr, &data, i);
         if (error)
         {
             break;

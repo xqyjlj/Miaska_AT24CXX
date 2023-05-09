@@ -15,7 +15,7 @@
  * </table>
  * *********************************************************************************
  */
-#include "misaka_at24cxx.h"
+#include "misaka_device/misaka_at24cxx.h"
 #include "rtthread.h"
 #include "rtdevice.h"
 
