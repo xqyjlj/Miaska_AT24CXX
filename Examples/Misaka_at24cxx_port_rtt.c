@@ -43,7 +43,7 @@ static uint16_t i2c_send_then_recv(uint8_t address, uint8_t* txbuf, uint32_t txl
     msg[0].len = txlen;
 
     msg[1].addr = address;
-    msg[1].flags = RT_I2C_WR;
+    msg[1].flags = RT_I2C_RD;
     msg[1].buf = rxbuf;
     msg[1].len = rxlen;
 
